@@ -1,9 +1,7 @@
 recipes:
   dataprep_rnipp:
     input: rnipp_fwf
-    output:
-      dataset: rnipp
-      append: False
+    output: rnipp
     threads: 4
     steps:
       - eval:
