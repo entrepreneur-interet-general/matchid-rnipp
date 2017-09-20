@@ -1,0 +1,28 @@
+datasets:
+  rnipp:
+    connector: elasticsearch
+    table: rnipp
+    body:
+      settings:
+        #index.store.type: mmapfs 
+        index.refresh_interval: 30s
+        index.number_of_replicas: 0
+      mappings:
+        rnipp:
+          _all:
+            enabled: False
+          dynamic: False
+          properties:
+            matchid_id:
+              type: keyword
+            #above lines are useless if rnipp not used for matching
+            matchid_name_match:
+              type: text
+            matchid_date_birth_str:
+              type: keyword
+            matchid_date_death_src:
+              type: keyword              
+            matchid_location_city:
+              type: keyword
+            matchid_location_country:
+              type: keyword

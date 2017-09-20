@@ -1,0 +1,27 @@
+datasets:
+  #INSEE death database
+  rnipp_fwf:
+    connector: upload
+    table: Deces_2017M07_1970.txt.gz
+    encoding: latin-1
+    type: read_fwf
+    widths: 
+      - 80
+      - 1
+      - 8
+      - 5
+      - 30
+      - 30
+      - 8
+      - 5
+      - 10
+    names: 
+      - DCD_NOM_PRENOMS
+      - DCD_SEXE
+      - DCD_DATE_NAISSANCE
+      - DCD_CODE_INSEE_NAISSANCE
+      - DCD_COMMUNE_NAISSANCE
+      - DCD_PAYS_NAISSANCE
+      - DCD_DATE_DECES
+      - DCD_CODE_INSEE_DECES
+      - DCD_NUM_DECES
