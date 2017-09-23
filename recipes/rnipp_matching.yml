@@ -45,10 +45,15 @@ recipes:
                         - match:
                             matchid_location_country: matchid_location_country
                       minimum_should_match: 2
-
+      - rename:
+          hit_matchid_hit_number: total
+          hit_matchid_score_es_max: max_score
+      - keep:
+          select: .*
+          where: hit_matchid_score_es_max > 20
       - scoring:
       - eval:
-          - confiance: round(100*matchid_hit_score)    
+          - confiance: round(100*matchid_hit_score)
       - diff: # optionnal diff method which display difference with hits
       #- keep:
       #    select: .*(diff.*|confiance|score_name|score_location|score_sex|score_date|hit_distance)$

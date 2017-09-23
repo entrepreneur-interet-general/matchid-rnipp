@@ -5,10 +5,24 @@ datasets:
     body:
       settings:
         #index.store.type: mmapfs 
-        index.refresh_interval: 30s
-        index.number_of_replicas: 0
+        index:
+          refresh_interval: 30s
+          number_of_replicas: 0
+          analysis:
+            analyzer:
+              matchid_analyzer:
+                tokenizer: standard
+                filter:
+                  - standard
+                  - lowercase
+                  - matchid_phone
+            filter:
+              matchid_phone:
+                type: phonetic
+                encoder: doublemetaphone
+                replace: False  
       mappings:
-        rnipp:
+        rnipp:       
           _all:
             enabled: False
           dynamic: False
