@@ -1,8 +1,8 @@
 datasets:
   shuffle_rnipp:
     connector: upload
-    table: shuffle_rnipp
-    encoding: latin-1
+    table: shuffle_rnipp.txt
+    encoding: utf-8
     type: fwf
     widths: 
       - 80

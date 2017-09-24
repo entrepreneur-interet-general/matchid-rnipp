@@ -3,7 +3,7 @@ datasets:
   rnipp_fwf:
     connector: upload
     table: Deces_2017M07_1970.txt.gz
-    encoding: latin-1
+    encoding: utf-8
     type: fwf
     widths: 
       - 80

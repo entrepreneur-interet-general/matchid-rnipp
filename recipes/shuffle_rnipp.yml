@@ -1,5 +1,7 @@
 recipes:
   shuffle_rnipp:
+    threads: 1
+    test_chunk_size: 1000
     input: rnipp_fwf
     output: shuffle_rnipp
     steps:
@@ -36,5 +38,5 @@ recipes:
           select: DCD_(NOM|PRENOMS|PRENOMS_SEXE|LIEU_NAISSANCE)$ 
       - keep:
           select: .*
-          where: DCD_DATE_DECES > DCD_DATE_NAISSANCE
+          where: DCD_DATE_DECES >= DCD_DATE_NAISSANCE
       
