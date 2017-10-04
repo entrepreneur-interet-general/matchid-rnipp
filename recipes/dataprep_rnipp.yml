@@ -1,12 +1,12 @@
 recipes:
   dataprep_rnipp:
+    test_chunk_size: 500
     input: rnipp_fwf
     output: rnipp
-    threads: 4
+    threads: 3
     steps:
       - eval:
         #tag dataset and records with uniq id
-          - fake: '"hop"'
           - matchid_id: sha1(row)
           - matchid_src: str("RNIPP")
           - matchid_tag: "201701"
