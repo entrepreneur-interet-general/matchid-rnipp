@@ -54,7 +54,7 @@ recipes:
       - scoring:
       - eval:
           - confiance: round(100*matchid_hit_score)
-      - diff: # optionnal diff method which display difference with hits
+      #- diff: # optionnal diff method which display difference with hits
       #- keep:
       #    select: .*(diff.*|confiance|score_name|score_location|score_sex|score_date|hit_distance)$
       #    where: confiance>10
